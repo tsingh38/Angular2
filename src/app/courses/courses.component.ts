@@ -1,13 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgModule } from '@angular/core';
+import {CourseService} from '../service/course.service';
+import {AutoGrowDirective} from '../directives/auto-grow.directive';
 
 @Component({
-  selector: 'app-courses',
+  selector: 'courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  styleUrls: ['./courses.component.css'],
+  providers:[CourseService]
 })
-export class CoursesComponent implements OnInit {
 
-  constructor() { }
+@NgModule({
+  declarations:[AutoGrowDirective]
+})
+export class CoursesComponent {
+
+  title:string="the title of courses page";
+  courses:string[];
+  courseService:CourseService;
+  constructor(courseService:CourseService) {
+    this.courses=courseService.getCourses();
+   }
+
+   
 
   ngOnInit() {
   }
