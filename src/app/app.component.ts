@@ -1,6 +1,7 @@
 import { Component ,NgModule} from '@angular/core';
 import{CoursesComponent} from './courses/courses.component';
 import{AuthorComponent} from './author/author.component';
+import{StarComponent} from './star/star.component';
 
 
 @Component({
