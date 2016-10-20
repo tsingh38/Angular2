@@ -2,6 +2,7 @@ import { Component ,NgModule} from '@angular/core';
 import{CoursesComponent} from './courses/courses.component';
 import{AuthorComponent} from './author/author.component';
 import{StarComponent} from './star/star.component';
+import{HeartComponent} from './heart/heart.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import{StarComponent} from './star/star.component';
 })
 
 @NgModule({
-  declarations:[CoursesComponent,AuthorComponent]
+  declarations:[CoursesComponent,AuthorComponent,HeartComponent]
 })
 export class AppComponent {
   title = 'app works!';
