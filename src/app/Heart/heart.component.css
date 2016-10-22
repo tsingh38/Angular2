@@ -1,3 +1,9 @@
 .glyphicon-heart {
     color:grey;
+    cursor: pointer;
+    }
+
+    .glyphicon-heart-liked {
+    color:deeppink;
+    cursor: pointer;
     }

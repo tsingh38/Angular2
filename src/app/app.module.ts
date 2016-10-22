@@ -9,6 +9,7 @@ import { AuthorComponent } from './author/author.component';
 import { AutoGrowDirective } from './directives/auto-grow.directive';
 import { StarComponent } from './star/star.component';
 import { HeartComponent } from './heart/heart.component';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HeartComponent } from './heart/heart.component';
     AuthorComponent,
     AuthorComponent,
     AutoGrowDirective,
-    StarComponent,HeartComponent
+    StarComponent,HeartComponent, TweetComponent
   ],
   imports: [
     BrowserModule,
