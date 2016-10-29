@@ -4,29 +4,40 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses/courses.component';
-import { AuthorComponent } from './author/author.component';
-import { AutoGrowDirective } from './directives/auto-grow.directive';
-import { StarComponent } from './star/star.component';
-import { HeartComponent } from './heart/heart.component';
-import { TweetComponent } from './tweet/tweet.component';
+import { LoginComponent } from './login/login.component';
+import { SiteComponent } from './site/site.component';
+import { RouterModule } from '@angular/router';
+import { NavigationComponent } from './site/navigation/navigation.component';
+import { GeneralComponent } from './site/general/general.component';
+import { CustomerComponent } from './site/general/customer/customer.component';
+import { InvoiceComponent } from './site/general/invoice/invoice.component';
+import {LocalStorageService} from "angular2-localstorage/LocalStorageEmitter";
+import {AuthenticationService} from "./site/AuthenticationService";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    AuthorComponent,
-    AuthorComponent,
-    AuthorComponent,
-    AutoGrowDirective,
-    StarComponent,HeartComponent, TweetComponent
+    LoginComponent,
+    SiteComponent,
+    GeneralComponent,
+    NavigationComponent,
+    GeneralComponent,
+    CustomerComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: 'site', component: SiteComponent },
+      { path: 'login', component: LoginComponent },
+      { path: '', component: LoginComponent }
+    ])
   ],
-  providers: [],
+  providers: [LocalStorageService,AuthenticationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(storageService: LocalStorageService){}
+}
