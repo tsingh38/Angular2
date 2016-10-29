@@ -2,20 +2,28 @@
 import { LocalStorage, SessionStorage } from "angular2-localstorage/WebStorage";
 export class AuthenticationService {
 
+
     @SessionStorage() public userConfiguration: Object;
 
-    isAuthentic(component: string) {
+    isAuthentic(component: string):boolean {
         if (this.isComponentAllowed(component)){
             return true;
         }
     }
 
-    public getUserConfiguration() {
+    public getUserConfiguration():Object {
         return this.userConfiguration;
     }
 
     saveInSession(data: Object) {
         this.userConfiguration = data;
+    }
+
+    isUserLoggedIn():boolean{
+        if(this.userConfiguration==null){
+            return false;
+        }
+        return true;
     }
 
     isComponentAllowed(component:string){
