@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
 				  "access":"ENABLED"
 		},
 		{
-			  "name":"InvoicingComponent",
-				  "access":"HIDDEN"
+			  "name":"InvoiceComponent",
+				  "access":"ENABLED"
 			
 		}
 
@@ -40,9 +40,10 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
+		this.authenticationService.inValidateSession();
 		this.isUserAuthenticated = true;
 		this.authenticationService.saveInSession(this.dummyConfiguration);
-		this.router.navigate(['/site', {}]);
+		this.router.navigate(['/site']);
 	}
 
 	ngOnInit() {

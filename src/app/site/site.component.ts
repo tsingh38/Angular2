@@ -13,6 +13,14 @@ import {AuthenticationService} from "./AuthenticationService";
 export class SiteComponent extends SuperParentComponent{
   constructor(private router: Router, private authenticationService: AuthenticationService) { 
     super();
-    this.validateSession(router,authenticationService);
+    this.validateSession();
   }
+
+
+
+    validateSession() {
+        if (!this.authenticationService.isUserLoggedIn()) {
+            this.router.navigate(['/login']);
+        }
+    }
 }

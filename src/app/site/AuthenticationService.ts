@@ -26,9 +26,13 @@ export class AuthenticationService {
         return true;
     }
 
+    inValidateSession(){
+        this.userConfiguration={};
+    }
+
     isComponentAllowed(component:string){
        var result:Array<Object>;
-       if(this.userConfiguration=={}){
+       if(this.userConfiguration==null){
            return false;
        }
        if(this.userConfiguration.hasOwnProperty("component")){
@@ -47,44 +51,6 @@ export class AuthenticationService {
 
 }
 
-// export class UserConfig {
-//     private username: String;
-//     private listOfComponents: Array<Component>;
-
-    
-//     getUserConfig(data: Object) {
-//         return this.serialise(this, data.toString());
-//     }
-
-
-
-//     hasComponent(nameOfComponent: Object) {
-//         for (var i = 0; i < this.listOfComponents.length; i++) {
-//             if (this.listOfComponents[i].name == nameOfComponent) {
-//                 return true;
-//             }
-//             return false;
-//         }
-//     }
-
-
-//         serialise(user :UserConfig, data:string){
-//             var jsonObj = JSON.parse(data);
-
-//             if (typeof user["fromJSON"] === "function") {
-//                 user["fromJSON"](jsonObj);
-//             }
-//             else {
-//                 for (var propName in jsonObj) {
-//                     user[propName] = jsonObj[propName]
-//                 }
-//             }
-
-//             return user;
-//         }
-
-
-//     }
  enum AccessType {
      ENABLED=<any>"ENABLED",
      HIDDEN=<any>"HIDDEN"

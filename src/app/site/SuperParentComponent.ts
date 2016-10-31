@@ -7,9 +7,5 @@ export class SuperParentComponent {
 constructor(){
     
 }
-    validateSession( router: Router,  authenticationService: AuthenticationService) {
-        if (!authenticationService.isUserLoggedIn()) {
-            router.navigate(['/login', {}]);
-        }
-    }
+  
 }

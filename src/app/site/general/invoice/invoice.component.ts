@@ -9,12 +9,16 @@ import {SuperChildComponent} from '../../SuperChildComponent';
   styleUrls: ['./invoice.component.css']
 })
 export class InvoiceComponent extends SuperChildComponent {
+public allowed: boolean = false;
 
- private authenticationService:AuthenticationService;
-
-  constructor(authenticationService : AuthenticationService) {
-    super(authenticationService);
+  constructor(private authenticationService : AuthenticationService) {
+    super();
     this.authenticationService=authenticationService;
-    this.isAllowed(this.constructor.name);
+     this.isAllowed(this.constructor.name);
   }
+
+ isAllowed(component: string) {
+        this.allowed = this.authenticationService.isAuthentic(component);
+    }
+
 }
