@@ -1,0 +1,9 @@
+.navigation{
+    float:left; 
+    width: 20%; 
+    color:black;
+    background-color: darkgrey;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
