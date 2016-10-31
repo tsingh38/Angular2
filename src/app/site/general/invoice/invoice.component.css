@@ -7,3 +7,17 @@
     bottom:0px
 
 }
+
+.invoice-blurr{
+    min-height:1px;
+    width:100%;
+    height: 500px;
+    border-style: solid;
+    position: absolute;
+    bottom:0px;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px)
+  }

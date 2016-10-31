@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 		"user":"dummy",
 		"component":[{
                   "name":"CustomerComponent",
-				  "access":"ENABLED"
+				  "access":"HIDDEN"
 		},
 		{
 			  "name":"InvoiceComponent",
